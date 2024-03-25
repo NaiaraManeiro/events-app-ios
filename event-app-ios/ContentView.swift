@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("RememberMe") var rememberMe: Bool = false
+    @AppStorage("RememberUserEmail") var rememberUserEmail: String = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        Group {
+            if rememberMe {
+                TabViewMain(emailUsuario: $rememberUserEmail)
+            } else {
+                LoginView()
+            }
         }
-        .padding()
     }
-}
-
-#Preview {
-    ContentView()
 }

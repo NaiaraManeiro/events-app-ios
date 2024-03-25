@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  event-app-ios
+
+  Created by Naiara Maneiro on 15/3/24.
+  
+*/
+
+//Login
+
+"emailText" = "E-mail";
+"invalidEmail" = "Invalid email!";
+
+"invalidPass" = "Password has to have at least 8 caracters!";
+"wrongPass" = "The password is incorrect, please check again";
+"passText" = "Password";
+
+"rememberBtn" = "Remember me";
+
+"loginBtn" = "LOGIN";
+
+"loginDialogTitle" = "User Not Found";
+"loginDialogText" = "This email does not exist. Do you want to create a new user?";
+"loginDialogBtn1" = "Crete User";
+"loginDialogBtn2" = "Cancel";
+
+"loginOTP" = "Login OTP";
+"loginOTPText" = "Insert the number: ";
+"loginOtpTryAgain" = "Try again!";
+"loginOtpManyTries" = "To many tries!";
+
+"searchBar" = "Search";
+
+//Home - Details
+"HomeTab" = "Home";
