@@ -25,6 +25,11 @@
 		4FCCED9B2BA34E7A00700259 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCCED9A2BA34E7A00700259 /* Preview Assets.xcassets */; };
 		4FCCEDA22BA3515B00700259 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FCCEDA12BA3515B00700259 /* Launch Screen.storyboard */; };
 		4FD5C33A2BB16CB300B5E059 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3392BB16CB300B5E059 /* HomeView.swift */; };
+		4FD5C33C2BB1763C00B5E059 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C33B2BB1763C00B5E059 /* EventManager.swift */; };
+		4FD5C33F2BB1936700B5E059 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C33E2BB1936700B5E059 /* Event.swift */; };
+		4FD5C3412BB1945600B5E059 /* EventListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3402BB1945600B5E059 /* EventListResponse.swift */; };
+		4FD5C3432BB194DD00B5E059 /* EventImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3422BB194DD00B5E059 /* EventImage.swift */; };
+		4FD5C3452BB19D9800B5E059 /* Embedded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3442BB19D9700B5E059 /* Embedded.swift */; };
 		F2ECC14A55FDC1BA588CA173 /* Pods_event_app_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC37A67AB4B01112CDF518C /* Pods_event_app_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +55,11 @@
 		4FCCED9A2BA34E7A00700259 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4FCCEDA12BA3515B00700259 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		4FD5C3392BB16CB300B5E059 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4FD5C33B2BB1763C00B5E059 /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		4FD5C33E2BB1936700B5E059 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		4FD5C3402BB1945600B5E059 /* EventListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListResponse.swift; sourceTree = "<group>"; };
+		4FD5C3422BB194DD00B5E059 /* EventImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventImage.swift; sourceTree = "<group>"; };
+		4FD5C3442BB19D9700B5E059 /* Embedded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Embedded.swift; sourceTree = "<group>"; };
 		53E7D7939A2261479F771B15 /* Pods-event-app-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-event-app-ios.debug.xcconfig"; path = "Target Support Files/Pods-event-app-ios/Pods-event-app-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		62F3CE4BBF23D457BA437224 /* Pods-event-app-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-event-app-ios.release.xcconfig"; path = "Target Support Files/Pods-event-app-ios/Pods-event-app-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,9 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				4FBF325A2BA4620C00AD13E5 /* Widgets */,
+				4FD5C3382BB16C9500B5E059 /* TabViews */,
 				4FBF32412BA4566300AD13E5 /* LoginView.swift */,
 				4FBF325F2BA463A900AD13E5 /* TabViewMain.swift */,
-				4FD5C3382BB16C9500B5E059 /* TabViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -80,6 +90,7 @@
 		4FBF323E2BA4560D00AD13E5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4FD5C33D2BB1934E00B5E059 /* Events */,
 				4FBF325D2BA4632000AD13E5 /* UserModel.swift */,
 			);
 			path = ViewModels;
@@ -101,6 +112,7 @@
 				4FBF32502BA45C8B00AD13E5 /* NotificationManager.swift */,
 				4FBF32542BA45D6200AD13E5 /* AuthManager.swift */,
 				4FBF32562BA45D9000AD13E5 /* DatabaseManager.swift */,
+				4FD5C33B2BB1763C00B5E059 /* EventManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -171,6 +183,17 @@
 				4FD5C3392BB16CB300B5E059 /* HomeView.swift */,
 			);
 			path = TabViews;
+			sourceTree = "<group>";
+		};
+		4FD5C33D2BB1934E00B5E059 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				4FD5C33E2BB1936700B5E059 /* Event.swift */,
+				4FD5C3422BB194DD00B5E059 /* EventImage.swift */,
+				4FD5C3402BB1945600B5E059 /* EventListResponse.swift */,
+				4FD5C3442BB19D9700B5E059 /* Embedded.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		9E0B4AEBA89ED3AC0F1CA41B /* Frameworks */ = {
@@ -308,15 +331,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FBF32512BA45C8B00AD13E5 /* NotificationManager.swift in Sources */,
+				4FD5C3432BB194DD00B5E059 /* EventImage.swift in Sources */,
 				4FD5C33A2BB16CB300B5E059 /* HomeView.swift in Sources */,
+				4FD5C3412BB1945600B5E059 /* EventListResponse.swift in Sources */,
+				4FD5C33C2BB1763C00B5E059 /* EventManager.swift in Sources */,
 				4FBF32552BA45D6200AD13E5 /* AuthManager.swift in Sources */,
 				4FBF32422BA4566300AD13E5 /* LoginView.swift in Sources */,
 				4FBF32592BA460B000AD13E5 /* StringLocalization.swift in Sources */,
 				4FBF32462BA45A4000AD13E5 /* LocalizationService.swift in Sources */,
 				4FBF32442BA45A2900AD13E5 /* Language.swift in Sources */,
+				4FD5C33F2BB1936700B5E059 /* Event.swift in Sources */,
 				4FBF325C2BA4622800AD13E5 /* ToastView.swift in Sources */,
 				4FBF32602BA463A900AD13E5 /* TabViewMain.swift in Sources */,
 				4FBF32532BA45D1E00AD13E5 /* AppColors.swift in Sources */,
+				4FD5C3452BB19D9800B5E059 /* Embedded.swift in Sources */,
 				4FCCED962BA34E7600700259 /* ContentView.swift in Sources */,
 				4FCCED942BA34E7600700259 /* event_app_iosApp.swift in Sources */,
 				4FBF325E2BA4632000AD13E5 /* UserModel.swift in Sources */,
