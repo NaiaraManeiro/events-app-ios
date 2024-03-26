@@ -28,7 +28,7 @@ class EventAPI {
                 return
             }
             
-            var request = URLRequest(url: url)
+            let request = URLRequest(url: url)
             
             let task = session.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {
@@ -36,9 +36,6 @@ class EventAPI {
                     completion(nil)
                     return
                 }
-                
-                let jsonString = String(data: data, encoding: .utf8)
-                print("Received JSON: \(jsonString)")
                 
                 do {
                     let decoder = JSONDecoder()

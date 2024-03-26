@@ -30,6 +30,13 @@
 		4FD5C3412BB1945600B5E059 /* EventListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3402BB1945600B5E059 /* EventListResponse.swift */; };
 		4FD5C3432BB194DD00B5E059 /* EventImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3422BB194DD00B5E059 /* EventImage.swift */; };
 		4FD5C3452BB19D9800B5E059 /* Embedded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3442BB19D9700B5E059 /* Embedded.swift */; };
+		4FD5C3472BB1AA6400B5E059 /* EventCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3462BB1AA6400B5E059 /* EventCardView.swift */; };
+		4FD5C3492BB1B05500B5E059 /* EventDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3482BB1B05500B5E059 /* EventDate.swift */; };
+		4FD5C34B2BB1B1F000B5E059 /* Start.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C34A2BB1B1F000B5E059 /* Start.swift */; };
+		4FD5C34D2BB1C4B200B5E059 /* PriceRanges.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C34C2BB1C4B200B5E059 /* PriceRanges.swift */; };
+		4FD5C34F2BB1CDA300B5E059 /* EmbeddedX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C34E2BB1CDA300B5E059 /* EmbeddedX.swift */; };
+		4FD5C3512BB1CDF600B5E059 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3502BB1CDF600B5E059 /* Venue.swift */; };
+		4FD5C3532BB1CEA800B5E059 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD5C3522BB1CEA800B5E059 /* Address.swift */; };
 		F2ECC14A55FDC1BA588CA173 /* Pods_event_app_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC37A67AB4B01112CDF518C /* Pods_event_app_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +67,13 @@
 		4FD5C3402BB1945600B5E059 /* EventListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListResponse.swift; sourceTree = "<group>"; };
 		4FD5C3422BB194DD00B5E059 /* EventImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventImage.swift; sourceTree = "<group>"; };
 		4FD5C3442BB19D9700B5E059 /* Embedded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Embedded.swift; sourceTree = "<group>"; };
+		4FD5C3462BB1AA6400B5E059 /* EventCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCardView.swift; sourceTree = "<group>"; };
+		4FD5C3482BB1B05500B5E059 /* EventDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDate.swift; sourceTree = "<group>"; };
+		4FD5C34A2BB1B1F000B5E059 /* Start.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Start.swift; sourceTree = "<group>"; };
+		4FD5C34C2BB1C4B200B5E059 /* PriceRanges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceRanges.swift; sourceTree = "<group>"; };
+		4FD5C34E2BB1CDA300B5E059 /* EmbeddedX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedX.swift; sourceTree = "<group>"; };
+		4FD5C3502BB1CDF600B5E059 /* Venue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
+		4FD5C3522BB1CEA800B5E059 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		53E7D7939A2261479F771B15 /* Pods-event-app-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-event-app-ios.debug.xcconfig"; path = "Target Support Files/Pods-event-app-ios/Pods-event-app-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		62F3CE4BBF23D457BA437224 /* Pods-event-app-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-event-app-ios.release.xcconfig"; path = "Target Support Files/Pods-event-app-ios/Pods-event-app-ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				4FD5C3392BB16CB300B5E059 /* HomeView.swift */,
+				4FD5C3462BB1AA6400B5E059 /* EventCardView.swift */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -192,6 +207,12 @@
 				4FD5C3422BB194DD00B5E059 /* EventImage.swift */,
 				4FD5C3402BB1945600B5E059 /* EventListResponse.swift */,
 				4FD5C3442BB19D9700B5E059 /* Embedded.swift */,
+				4FD5C3482BB1B05500B5E059 /* EventDate.swift */,
+				4FD5C34A2BB1B1F000B5E059 /* Start.swift */,
+				4FD5C34C2BB1C4B200B5E059 /* PriceRanges.swift */,
+				4FD5C34E2BB1CDA300B5E059 /* EmbeddedX.swift */,
+				4FD5C3502BB1CDF600B5E059 /* Venue.swift */,
+				4FD5C3522BB1CEA800B5E059 /* Address.swift */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -331,16 +352,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FBF32512BA45C8B00AD13E5 /* NotificationManager.swift in Sources */,
+				4FD5C34D2BB1C4B200B5E059 /* PriceRanges.swift in Sources */,
+				4FD5C3532BB1CEA800B5E059 /* Address.swift in Sources */,
 				4FD5C3432BB194DD00B5E059 /* EventImage.swift in Sources */,
 				4FD5C33A2BB16CB300B5E059 /* HomeView.swift in Sources */,
+				4FD5C34F2BB1CDA300B5E059 /* EmbeddedX.swift in Sources */,
 				4FD5C3412BB1945600B5E059 /* EventListResponse.swift in Sources */,
 				4FD5C33C2BB1763C00B5E059 /* EventManager.swift in Sources */,
 				4FBF32552BA45D6200AD13E5 /* AuthManager.swift in Sources */,
+				4FD5C3492BB1B05500B5E059 /* EventDate.swift in Sources */,
 				4FBF32422BA4566300AD13E5 /* LoginView.swift in Sources */,
 				4FBF32592BA460B000AD13E5 /* StringLocalization.swift in Sources */,
 				4FBF32462BA45A4000AD13E5 /* LocalizationService.swift in Sources */,
+				4FD5C3472BB1AA6400B5E059 /* EventCardView.swift in Sources */,
 				4FBF32442BA45A2900AD13E5 /* Language.swift in Sources */,
+				4FD5C34B2BB1B1F000B5E059 /* Start.swift in Sources */,
 				4FD5C33F2BB1936700B5E059 /* Event.swift in Sources */,
+				4FD5C3512BB1CDF600B5E059 /* Venue.swift in Sources */,
 				4FBF325C2BA4622800AD13E5 /* ToastView.swift in Sources */,
 				4FBF32602BA463A900AD13E5 /* TabViewMain.swift in Sources */,
 				4FBF32532BA45D1E00AD13E5 /* AppColors.swift in Sources */,

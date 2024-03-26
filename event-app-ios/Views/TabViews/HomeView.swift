@@ -27,7 +27,7 @@ struct HomeView: View {
                 Text("No events available")
             } else {
                 ScrollView {
-                    LazyVGrid(columns: Array(repeating: GridItem(), count: 2)) {
+                    LazyVGrid(columns: Array(repeating: GridItem(), count: 1)) {
                         ForEach(events) { event in
                             EventView(event: event)
                         }
@@ -53,38 +53,3 @@ struct HomeView: View {
         }
     }
 }
-
-struct EventView: View {
-    let event: Event
-    
-    var body: some View {
-        VStack {
-            Text(event.name ?? "Unknown")
-            // Add more views to display other event details
-        }
-        .padding()
-        .background(Color.gray.opacity(0.1))
-        .cornerRadius(10)
-        .padding(5)
-    }
-}
-
-/*struct HomeView: View {
-    
-    @AppStorage("language")
-    private var language = LocalizationService.shared.language
-    
-    @State private var searchText = ""
-    @State private var isSearching = false
-    
-    @Binding var emailUsuario: String
-    
-    var body: some View {
-        NavigationView {
-            /*List(searchResults, id: \.idDrink) { cocktail in
-                NavigationLink(destination: CocktailDetailView(cocktail: cocktail)) {
-                }
-            }*/
-        }
-    }
-}*/
