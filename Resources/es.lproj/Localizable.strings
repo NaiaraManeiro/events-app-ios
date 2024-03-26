@@ -33,6 +33,7 @@
 //Home
 "HomeTab" = "Eventos";
 "noEvents" = "No hay eventos disponibles.";
+"page" = "Página";
 
 //Event details
 "detailsTitle" = "Detalles del evento";

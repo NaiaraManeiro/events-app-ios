@@ -16,12 +16,33 @@ struct HomeView: View {
     
     @State private var searchText = ""
     @State private var isSearching = false
+    @State private var currentPage = 0
     
     @Binding var emailUsuario: String
     
     var body: some View {
         NavigationStack {
             VStack {
+                HStack {
+                    Button(action: {
+                        if currentPage > 0 {
+                            currentPage -= 1
+                            fetchEvents()
+                        }
+                    }) {
+                        Image(systemName: "chevron.left")
+                            .foregroundColor(currentPage > 0 ? .blue : .gray)
+                    }
+                    Text("\("page".localized(language)) \(currentPage + 1)")
+                    Button(action: {
+                        currentPage += 1
+                        fetchEvents()
+                    }) {
+                        Image(systemName: "chevron.right")
+                            .foregroundColor(.blue)
+                    }
+                }
+                
                 if isLoading {
                     ProgressView()
                 } else if events.isEmpty {
@@ -43,7 +64,8 @@ struct HomeView: View {
             .searchable(text: $searchText, prompt: "searchBar".localized(language))
             .padding()
             .onChange(of: searchText) { newValue in
-                fetchEvents(key: "keyword", data: newValue)
+                searchText = newValue
+                fetchEvents()
             }
             .onAppear {
                 fetchEvents()
@@ -51,14 +73,16 @@ struct HomeView: View {
         }
     }
     
-    private func fetchEvents(key: String? = nil , data: String? = nil) {
+    private func fetchEvents() {
         isLoading = true
         
-        var parameters: [String: String]? = nil
-            
-        if let key = key, let data = data {
-            parameters = [key: data]
+        var parameters: [[String: String]] = []
+        
+        if searchText != "" {
+            parameters.append(["keyword": searchText])
         }
+            
+        parameters.append(["page": String(currentPage)])
         
         EventAPI.fetchEvents(withParameters: parameters) { fetchedEvents in
             DispatchQueue.main.async {
