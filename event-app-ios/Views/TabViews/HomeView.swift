@@ -40,16 +40,27 @@ struct HomeView: View {
                     }
                 }
             }
+            .searchable(text: $searchText, prompt: "searchBar".localized(language))
             .padding()
+            .onChange(of: searchText) { newValue in
+                fetchEvents(key: "keyword", data: newValue)
+            }
             .onAppear {
                 fetchEvents()
             }
         }
     }
     
-    private func fetchEvents() {
+    private func fetchEvents(key: String? = nil , data: String? = nil) {
         isLoading = true
-        EventAPI.fetchEvents { fetchedEvents in
+        
+        var parameters: [String: String]? = nil
+            
+        if let key = key, let data = data {
+            parameters = [key: data]
+        }
+        
+        EventAPI.fetchEvents(withParameters: parameters) { fetchedEvents in
             DispatchQueue.main.async {
                 isLoading = false
                 if let fetchedEvents = fetchedEvents {

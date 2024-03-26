@@ -20,8 +20,14 @@ class EventAPI {
         }()
     
     
-    static func fetchEvents(completion: @escaping (EventListResponse?) -> Void) {
-        let urlString = "\(baseURL)\(eventsEndpoint)?apikey=\(apiKey)"
+    static func fetchEvents(withParameters parameters: [String: String]? = nil, completion: @escaping (EventListResponse?) -> Void) {
+        var urlString = "\(baseURL)\(eventsEndpoint)?apikey=\(apiKey)"
+        
+        if let parameters = parameters {
+            for (key, value) in parameters {
+                urlString = "\(urlString)&\(key)=\(value)"
+            }
+        }
 
         guard let url = URL(string: urlString) else {
             completion(nil)
