@@ -8,7 +8,7 @@
 import Foundation
 
 struct Classifications: Codable {
-    let segment : SegmentC
-    let genre: Genre
-    let subGenre: SubGenre
+    let segment : SegmentC?
+    let genre: Genre?
+    let subGenre: SubGenre?
 }

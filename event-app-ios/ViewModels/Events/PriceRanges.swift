@@ -8,7 +8,7 @@
 import Foundation
 
 struct PriceRanges: Codable {
-    let min: Double
-    let max: Double
+    let min: Double?
+    let max: Double?
     let currency: String
 }

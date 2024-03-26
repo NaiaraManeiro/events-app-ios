@@ -36,9 +36,11 @@ struct EventDetailsView: View {
                 }
                 
                 if let details = eventDetails {
-                    Text(details.name ?? "")
-                        .font(.title2)
-                        .padding(.top, 5)
+                    if let name = details.name {
+                        Text(name.replacingOccurrences(of: "\r\n", with: ""))
+                            .font(.title2)
+                            .padding(.top, 5)
+                    }
                     
                     HStack(spacing: 20) {
                         VStack(alignment: .leading, spacing: 20) {
@@ -49,8 +51,10 @@ struct EventDetailsView: View {
                                 VStack (alignment: .leading) {
                                     Text(details.dates.start.localDate)
                                         .font(.footnote)
-                                    Text(formatTime(details.dates.start.localTime))
-                                        .font(.caption)
+                                    if let localTime = details.dates.start.localTime {
+                                        Text(formatTime(localTime))
+                                            .font(.caption)
+                                    }
                                 }
                             }
                             if let embedded = details._embedded, let venues = embedded.venues, let firstVenue = venues.first {
@@ -69,21 +73,33 @@ struct EventDetailsView: View {
                                         }
                                     }
                                 }
+                            } else if let place = details.place, let address = place.address {
+                                HStack {
+                                    Image(systemName: "map.fill")
+                                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                        .foregroundColor(.yellow)
+                                    VStack {
+                                        VStack (alignment: .leading) {
+                                            Text(address.line1)
+                                                .font(.caption)
+                                        }
+                                    }
+                                }
                             }
                         }
                         
                         Spacer()
                         
                         VStack(alignment: .leading, spacing: 20) {
-                            if let prices = details.priceRanges, let firstPrices = prices.first {
+                            if let prices = details.priceRanges, let firstPrices = prices.first, let min = firstPrices.min, let max = firstPrices.max {
                                 HStack {
                                     Image(systemName: "dollarsign")
                                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                         .foregroundColor(.green)
                                     VStack (alignment: .leading) {
-                                        Text("\("from".localized(language)) \(String(firstPrices.min)) \(firstPrices.currency)")
+                                        Text("\("from".localized(language)) \(String(min)) \(firstPrices.currency)")
                                             .font(.footnote)
-                                        Text("\("to".localized(language)) \(String(firstPrices.max)) \(firstPrices.currency)")
+                                        Text("\("to".localized(language)) \(String(max)) \(firstPrices.currency)")
                                             .font(.footnote)
                                     }
                                 }
@@ -94,24 +110,32 @@ struct EventDetailsView: View {
                     
                     if let classif = details.classifications, let firstClassif = classif.first {
                         HStack(spacing: 5) {
-                            Text(firstClassif.segment.name)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 5)
-                                .background(Color.orange.opacity(0.5))
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                            Text(firstClassif.genre.name)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 5)
-                                .background(Color.red.opacity(0.5))
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                            Text(firstClassif.subGenre.name)
-                                .padding(.horizontal, 10)
-                                .padding(.vertical, 5)
-                                .background(Color.brown.opacity(0.5))
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
+                            if let segment = firstClassif.segment, segment.name != "Undefined" {
+                                Text(segment.name)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 5)
+                                    .background(Color.orange.opacity(0.5))
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                            }
+                            
+                            if let genre = firstClassif.genre, genre.name != "Undefined" {
+                                Text(genre.name)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 5)
+                                    .background(Color.red.opacity(0.5))
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                            }
+                            
+                            if let subGenre = firstClassif.subGenre, subGenre.name != "Undefined" {
+                                Text(subGenre.name)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 5)
+                                    .background(Color.brown.opacity(0.5))
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                            }
                         }
                     }
                     
@@ -162,20 +186,22 @@ struct EventDetailsView: View {
                     
                     Spacer()
                     
-                    Button(action: {
-                        UIApplication.shared.open(URL(string: details.url)!)
-                    }) {
-                        Text("buyButton".localized(language))
-                            .foregroundColor(.black)
-                            .padding()
-                            .background(Color.white)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.black, lineWidth: 1)
-                            )
+                    if let url = details.url {
+                        Button(action: {
+                            UIApplication.shared.open(URL(string: url)!)
+                        }) {
+                            Text("buyButton".localized(language))
+                                .foregroundColor(.black)
+                                .padding()
+                                .background(Color.white)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(Color.black, lineWidth: 1)
+                                )
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.horizontal)
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal)
                 }
             }
             .padding()

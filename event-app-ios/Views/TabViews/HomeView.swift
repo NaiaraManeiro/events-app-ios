@@ -17,37 +17,49 @@ struct HomeView: View {
     @State private var searchText = ""
     @State private var isSearching = false
     @State private var currentPage = 0
+    @State private var selectedSortOption = SortOption.random
     
     @Binding var emailUsuario: String
     
     var body: some View {
         NavigationStack {
             VStack {
-                HStack {
-                    Button(action: {
-                        if currentPage > 0 {
-                            currentPage -= 1
-                            fetchEvents()
-                        }
-                    }) {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(currentPage > 0 ? .blue : .gray)
-                    }
-                    Text("\("page".localized(language)) \(currentPage + 1)")
-                    Button(action: {
-                        currentPage += 1
-                        fetchEvents()
-                    }) {
-                        Image(systemName: "chevron.right")
-                            .foregroundColor(.blue)
-                    }
-                }
-                
                 if isLoading {
                     ProgressView()
                 } else if events.isEmpty {
                     Text("noEvents".localized(language))
                 } else {
+                    HStack {
+                        Button(action: {
+                            if currentPage > 0 {
+                                currentPage -= 1
+                                fetchEvents()
+                            }
+                        }) {
+                            Image(systemName: "chevron.left")
+                                .foregroundColor(currentPage > 0 ? .blue : .gray)
+                        }
+                        Text("\("page".localized(language)) \(currentPage + 1)")
+                        Button(action: {
+                            currentPage += 1
+                            fetchEvents()
+                        }) {
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.blue)
+                        }
+                        
+                        Spacer()
+                        
+                        Picker("Sort By", selection: $selectedSortOption) {
+                            ForEach(SortOption.allCases) { option in
+                                Text(option.rawValue)
+                                    .tag(option)
+                            }
+                        }
+                        .pickerStyle(DefaultPickerStyle())
+                        .padding(.horizontal)
+                    }
+                    
                     ScrollView {
                         LazyVGrid(columns: Array(repeating: GridItem(), count: 1)) {
                             ForEach(events) { event in
@@ -67,6 +79,9 @@ struct HomeView: View {
                 searchText = newValue
                 fetchEvents()
             }
+            .onChange(of: selectedSortOption) { _ in
+                fetchEvents()
+            }
             .onAppear {
                 fetchEvents()
             }
@@ -83,6 +98,19 @@ struct HomeView: View {
         }
             
         parameters.append(["page": String(currentPage)])
+        
+        switch selectedSortOption {
+            case .dateAsc:
+                parameters.append(["sort": "date,asc"])
+            case .dateDesc:
+                parameters.append(["sort": "date,desc"])
+            case .nameAsc:
+                parameters.append(["sort": "name,asc"])
+            case .nameDesc:
+                parameters.append(["sort": "name,desc"])
+            case .random:
+                parameters.append(["sort": "random"])
+        }
         
         EventAPI.fetchEvents(withParameters: parameters) { fetchedEvents in
             DispatchQueue.main.async {

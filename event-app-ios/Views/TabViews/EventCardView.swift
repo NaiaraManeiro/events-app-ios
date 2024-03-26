@@ -36,28 +36,34 @@ struct EventView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 5))
                     .padding(8)
             }
-                    
-            Text(event.name ?? "")
-                .font(.headline)
-                .padding(.top, 5)
-                .lineLimit(1)
+            
+            if let name = event.name {
+                Text(name.replacingOccurrences(of: "\r\n", with: ""))
+                    .font(.headline)
+                    .padding(.top, 5)
+                    .lineLimit(1)
+            }
             
             HStack {
-                Image(systemName: "map.fill")
-                    .foregroundColor(.yellow)
                 if let embedded = event._embedded, let venues = embedded.venues, let firstVenue = venues.first, let address = firstVenue.address {
+                    Image(systemName: "map.fill")
+                        .foregroundColor(.yellow)
+                    Text(address.line1)
+                } else if let place = event.place, let address = place.address {
+                    Image(systemName: "map.fill")
+                        .foregroundColor(.yellow)
                     Text(address.line1)
                 }
             }
             
-            if let priceRanges = event.priceRanges, let firstPriceRange = priceRanges.first {
+            if let priceRanges = event.priceRanges, let firstPriceRange = priceRanges.first, let min = firstPriceRange.min, let max = firstPriceRange.max {
                 HStack {
                     Spacer()
                     HStack(spacing: 4) {
-                        Text(String(firstPriceRange.min) + " - ")
+                        Text(String(min) + " - ")
                             .font(.headline)
                             .foregroundColor(.black)
-                        Text(String(firstPriceRange.max))
+                        Text(String(max))
                             .font(.headline)
                             .foregroundColor(.black)
                         Text(firstPriceRange.currency)

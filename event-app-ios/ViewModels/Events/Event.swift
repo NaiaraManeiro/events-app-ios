@@ -12,6 +12,8 @@ struct Event: Codable, Identifiable {
     let id: String
     let images: [EventImage]?
     let name: String?
+    let url: String?
     let dates: EventDate
     let priceRanges: [PriceRanges]?
+    let place: Place?
 }
