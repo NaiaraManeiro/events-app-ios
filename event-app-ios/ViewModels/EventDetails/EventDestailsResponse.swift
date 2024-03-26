@@ -12,9 +12,9 @@ struct EventDetailsResponse: Codable {
     let id: String?
     let images: [EventImage]?
     let name: String?
-    let url: String?
+    let url: String
     let dates: EventDate
     let priceRanges: [PriceRanges]?
-    let ageRestrictions: AgeRestrictions?
-    let sales: Sales
+    let sales: Sales?
+    let classifications: [Classifications]?
 }

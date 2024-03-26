@@ -9,4 +9,5 @@ import Foundation
 
 struct Start: Codable {
     let localDate: String
+    let localTime: String
 }

@@ -31,8 +31,14 @@
 "searchBar" = "Buscar";
 
 //Home
-"HomeTab" = "Home";
+"HomeTab" = "Eventos";
 "noEvents" = "No hay eventos disponibles.";
 
 //Event details
 "detailsTitle" = "Detalles del evento";
+"from" = "De:";
+"to" = "A:";
+"date" = "Fecha:";
+"time" = "Hora:";
+"saledPeriod" = "Periodo de Compra";
+"buyButton" = "Comprar Tickets";

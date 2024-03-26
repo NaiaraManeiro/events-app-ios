@@ -24,12 +24,11 @@ struct EventView: View {
                     Image(systemName: "photo")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(height: 150)
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                 }
                 
                 Text(event.dates.start.localDate)
-                    .font(.caption)
+                    .font(.footnote)
                     .bold()
                     .foregroundColor(.white)
                     .padding(8)
@@ -67,7 +66,6 @@ struct EventView: View {
                     }
                     .padding()
                     .background(Color.white)
-                    .cornerRadius(8)
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
                             .stroke(Color.gray, lineWidth: 1)
@@ -80,7 +78,8 @@ struct EventView: View {
         .padding()
         .background(Color.white)
         .cornerRadius(10)
-        .shadow(radius: 5).onAppear {
+        .shadow(radius: 5)
+        .onAppear {
             loadImage()
         }
     }

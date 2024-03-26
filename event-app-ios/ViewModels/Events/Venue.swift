@@ -8,5 +8,6 @@
 import Foundation
 
 struct Venue: Codable {
+    let name: String
     let address: Address?
 }
