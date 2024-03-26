@@ -20,24 +20,30 @@ struct HomeView: View {
     @Binding var emailUsuario: String
     
     var body: some View {
-        VStack {
-            if isLoading {
-                ProgressView()
-            } else if events.isEmpty {
-                Text("No events available")
-            } else {
-                ScrollView {
-                    LazyVGrid(columns: Array(repeating: GridItem(), count: 1)) {
-                        ForEach(events) { event in
-                            EventView(event: event)
+        NavigationStack {
+            VStack {
+                if isLoading {
+                    ProgressView()
+                } else if events.isEmpty {
+                    Text("noEvents".localized(language))
+                } else {
+                    ScrollView {
+                        LazyVGrid(columns: Array(repeating: GridItem(), count: 1)) {
+                            ForEach(events) { event in
+                                NavigationLink {
+                                    EventDetailsView(id: event.id)
+                                } label : {
+                                    EventView(event: event)
+                                }
+                            }
                         }
                     }
                 }
             }
-        }
-        .padding()
-        .onAppear {
-            fetchEvents()
+            .padding()
+            .onAppear {
+                fetchEvents()
+            }
         }
     }
     

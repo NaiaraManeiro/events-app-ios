@@ -9,6 +9,7 @@ import SwiftUI
 
 struct EventView: View {
     let event: Event
+    
     @State private var imageData: Data?
         
     var body: some View {

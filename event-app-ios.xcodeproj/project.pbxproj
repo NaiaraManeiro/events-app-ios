@@ -19,6 +19,11 @@
 		4FBF325C2BA4622800AD13E5 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF325B2BA4622800AD13E5 /* ToastView.swift */; };
 		4FBF325E2BA4632000AD13E5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF325D2BA4632000AD13E5 /* UserModel.swift */; };
 		4FBF32602BA463A900AD13E5 /* TabViewMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBF325F2BA463A900AD13E5 /* TabViewMain.swift */; };
+		4FCB926E2BB2B94700CF1706 /* EventDestailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB926D2BB2B94700CF1706 /* EventDestailsResponse.swift */; };
+		4FCB92702BB2BAAB00CF1706 /* AgeRestrictions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB926F2BB2BAAB00CF1706 /* AgeRestrictions.swift */; };
+		4FCB92722BB2BC4B00CF1706 /* Sales.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB92712BB2BC4B00CF1706 /* Sales.swift */; };
+		4FCB92742BB2BC7D00CF1706 /* Public.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB92732BB2BC7D00CF1706 /* Public.swift */; };
+		4FCB92762BB2BFB500CF1706 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCB92752BB2BFB500CF1706 /* EventDetailsView.swift */; };
 		4FCCED942BA34E7600700259 /* event_app_iosApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCED932BA34E7600700259 /* event_app_iosApp.swift */; };
 		4FCCED962BA34E7600700259 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCED952BA34E7600700259 /* ContentView.swift */; };
 		4FCCED982BA34E7A00700259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FCCED972BA34E7A00700259 /* Assets.xcassets */; };
@@ -55,6 +60,11 @@
 		4FBF325B2BA4622800AD13E5 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		4FBF325D2BA4632000AD13E5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4FBF325F2BA463A900AD13E5 /* TabViewMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewMain.swift; sourceTree = "<group>"; };
+		4FCB926D2BB2B94700CF1706 /* EventDestailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDestailsResponse.swift; sourceTree = "<group>"; };
+		4FCB926F2BB2BAAB00CF1706 /* AgeRestrictions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeRestrictions.swift; sourceTree = "<group>"; };
+		4FCB92712BB2BC4B00CF1706 /* Sales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sales.swift; sourceTree = "<group>"; };
+		4FCB92732BB2BC7D00CF1706 /* Public.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Public.swift; sourceTree = "<group>"; };
+		4FCB92752BB2BFB500CF1706 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		4FCCED902BA34E7600700259 /* event-app-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "event-app-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCCED932BA34E7600700259 /* event_app_iosApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = event_app_iosApp.swift; sourceTree = "<group>"; };
 		4FCCED952BA34E7600700259 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +114,7 @@
 		4FBF323E2BA4560D00AD13E5 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				4FCB926C2BB2B92700CF1706 /* EventDetails */,
 				4FD5C33D2BB1934E00B5E059 /* Events */,
 				4FBF325D2BA4632000AD13E5 /* UserModel.swift */,
 			);
@@ -146,6 +157,17 @@
 				4FBF325B2BA4622800AD13E5 /* ToastView.swift */,
 			);
 			path = Widgets;
+			sourceTree = "<group>";
+		};
+		4FCB926C2BB2B92700CF1706 /* EventDetails */ = {
+			isa = PBXGroup;
+			children = (
+				4FCB926D2BB2B94700CF1706 /* EventDestailsResponse.swift */,
+				4FCB926F2BB2BAAB00CF1706 /* AgeRestrictions.swift */,
+				4FCB92712BB2BC4B00CF1706 /* Sales.swift */,
+				4FCB92732BB2BC7D00CF1706 /* Public.swift */,
+			);
+			path = EventDetails;
 			sourceTree = "<group>";
 		};
 		4FCCED872BA34E7500700259 = {
@@ -196,6 +218,7 @@
 			children = (
 				4FD5C3392BB16CB300B5E059 /* HomeView.swift */,
 				4FD5C3462BB1AA6400B5E059 /* EventCardView.swift */,
+				4FCB92752BB2BFB500CF1706 /* EventDetailsView.swift */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -353,10 +376,12 @@
 			files = (
 				4FBF32512BA45C8B00AD13E5 /* NotificationManager.swift in Sources */,
 				4FD5C34D2BB1C4B200B5E059 /* PriceRanges.swift in Sources */,
+				4FCB92742BB2BC7D00CF1706 /* Public.swift in Sources */,
 				4FD5C3532BB1CEA800B5E059 /* Address.swift in Sources */,
 				4FD5C3432BB194DD00B5E059 /* EventImage.swift in Sources */,
 				4FD5C33A2BB16CB300B5E059 /* HomeView.swift in Sources */,
 				4FD5C34F2BB1CDA300B5E059 /* EmbeddedX.swift in Sources */,
+				4FCB92702BB2BAAB00CF1706 /* AgeRestrictions.swift in Sources */,
 				4FD5C3412BB1945600B5E059 /* EventListResponse.swift in Sources */,
 				4FD5C33C2BB1763C00B5E059 /* EventManager.swift in Sources */,
 				4FBF32552BA45D6200AD13E5 /* AuthManager.swift in Sources */,
@@ -365,10 +390,13 @@
 				4FBF32592BA460B000AD13E5 /* StringLocalization.swift in Sources */,
 				4FBF32462BA45A4000AD13E5 /* LocalizationService.swift in Sources */,
 				4FD5C3472BB1AA6400B5E059 /* EventCardView.swift in Sources */,
+				4FCB92722BB2BC4B00CF1706 /* Sales.swift in Sources */,
 				4FBF32442BA45A2900AD13E5 /* Language.swift in Sources */,
 				4FD5C34B2BB1B1F000B5E059 /* Start.swift in Sources */,
 				4FD5C33F2BB1936700B5E059 /* Event.swift in Sources */,
+				4FCB926E2BB2B94700CF1706 /* EventDestailsResponse.swift in Sources */,
 				4FD5C3512BB1CDF600B5E059 /* Venue.swift in Sources */,
+				4FCB92762BB2BFB500CF1706 /* EventDetailsView.swift in Sources */,
 				4FBF325C2BA4622800AD13E5 /* ToastView.swift in Sources */,
 				4FBF32602BA463A900AD13E5 /* TabViewMain.swift in Sources */,
 				4FBF32532BA45D1E00AD13E5 /* AppColors.swift in Sources */,
@@ -447,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -504,7 +532,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -532,7 +560,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -568,7 +596,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

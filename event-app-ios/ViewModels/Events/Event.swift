@@ -9,12 +9,9 @@ import Foundation
 
 struct Event: Codable, Identifiable {
     let _embedded: EmbeddedX?
-    let id: String?
+    let id: String
     let images: [EventImage]?
-    let locale: String?
     let name: String?
-    let type: String?
-    let url: String?
     let dates: EventDate
     let priceRanges: [PriceRanges]?
 }

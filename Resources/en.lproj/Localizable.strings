@@ -31,5 +31,9 @@
 
 "searchBar" = "Search";
 
-//Home - Details
+//Home
 "HomeTab" = "Home";
+"noEvents" = "No events available.";
+
+//Event details
+"detailsTitle" = "Event Details";
